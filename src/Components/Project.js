@@ -7,15 +7,15 @@ function Project(props) {
   		projectItems = props.project.map(project => {
   		  return (
   		  	<ProjectItem key={project.title} project={project} />
-  		  )
- 		});	
-  	}
+        )
+		  });
+    }
   	
   	return (	
 	    <ul className="Project">
-	    	{projectItems}	    
+        {projectItems}	    
 	    </ul>
-	);
+    );
   	
  	  
 }
