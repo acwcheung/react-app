@@ -4,8 +4,8 @@ class AddProject extends React.Component {
   constructor(props) {
     super()
     this.state = {
-      title: '',
-      category: 'Web Design'
+        title: '',
+        category: 'Web Design'  
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -14,24 +14,24 @@ class AddProject extends React.Component {
   static defaultProps = {
     categories: ['Web Design', 'Web Development', 'Mobile Development']
   }
-  //using state and setState to make state being single source of truth
+  
   handleChange(e) {
-    let name = e.target.name;
+    //destructuring the target object
+    const { name, value } = e.target;
+    //the mergeing is shallow!
+    //[name] means it's a variable, not a string!
     this.setState({
-      [name]: e.target.value
-    })
+        [name]: value  
+    });
   }
 
   handleSubmit(e) {
-    let newProject = this.state;
-    //prevent the refresh after the form is submitted
+    const newProject = this.state;
     e.preventDefault();
-    //recieve the function from main app
     this.props.addProject(newProject);
   }    
 
   render() { 
-    //map function put here to allow access from below
     let categoryOptions = this.props.categories.map(category => {
       return <option key={category} value={category} >{category}</option>
     });

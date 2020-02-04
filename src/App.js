@@ -11,10 +11,7 @@ class App extends React.Component {
     }
     this.handleAddProject = this.handleAddProject.bind(this);
   };
-//how to pass data from child to main?
-//function flow from main to child
-//child executes the function with input
-//function return the output to main
+
 handleAddProject(project) {
   let projects = this.state.projects;
   projects.push(project);
