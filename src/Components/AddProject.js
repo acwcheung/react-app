@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid';
 
 class AddProject extends React.Component {
   constructor(props) {
@@ -16,11 +17,9 @@ class AddProject extends React.Component {
   }
   
   handleChange(e) {
-    //destructuring the target object
     const { name, value } = e.target;
-    //the mergeing is shallow!
-    //[name] means it's a variable, not a string!
     this.setState({
+        id: uuid.v4(),
         [name]: value  
     });
   }
@@ -41,7 +40,7 @@ class AddProject extends React.Component {
         <h3>Add Projects</h3>
         <form onSubmit={this.handleSubmit} >
           <div>
-            <label>Title</label>
+            <label>Title: </label>
             <input 
               name='title' 
               type='text' 
@@ -50,7 +49,7 @@ class AddProject extends React.Component {
               required />
           </div>
           <div>
-            <label>Category</label>
+            <label>Category: </label>
             <select 
               name='category'
               value={this.state.category}
