@@ -8,11 +8,14 @@ class ProjectItem extends React.Component {
   }
 
   render() {
+    const project = this.props.project;
   	return (	 
 	  <li className="Project">
-        {this.props.project.title}: {this.props.project.category}         
-        <button onClick={this.deleteProject.bind(this)} id={this.props.project.id} >X</button>
-      </li>
+      <span style={project.completed === 'no'? {color: 'red'}: {color: 'black' }} >
+        {this.props.project.title}: {this.props.project.category}
+      </span>           
+      <button onClick={this.deleteProject.bind(this)} id={this.props.project.id} >X</button>
+    </li>
 
 	);
   }	

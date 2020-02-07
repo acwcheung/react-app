@@ -25,27 +25,27 @@ componentDidMount() {
       id: uuid.v4(),
       title: 'Business website',
       category: 'Web Design',
-      completed: false  
+      completed: 'no'  
     },
     { 
       id: uuid.v4(),
       title: 'Social App',
       category: 'Mobile Development',  
-      completed: true  
+      completed: 'yes'  
     },
     { 
       id: uuid.v4(),
       title: 'Ecommerce Shopping Cart',
       category: 'Web Development',  
-      completed: true  
+      completed: 'yes'  
     }
     ]
   })
 }
 
 deleteProject(id) {
-  let projects = this.state.projects;
-  let index = projects.findIndex((item) => item.id = id);
+  const projects = this.state.projects;
+  const index = projects.findIndex(project => project.id === id);
   projects.splice(index, 1);
   this.setState({projects: projects});  
 }
@@ -65,6 +65,7 @@ handleCompleted(isCompleted) {
 }
 
 render() {
+  console.log(this.state.filterText);
   return (
     <div className="container-main">
       <h3>KOOL Web & App Development</h3>
@@ -80,7 +81,8 @@ render() {
         filterText={this.state.filterText}
         isCompleted={this.state.isCompleted} 
       />
-      <AddProject addProject={this.handleAddProject} />      
+      <AddProject addProject={this.handleAddProject} />
+      <p>Project in red is in progress</p>      
     </div>
   );  
 }

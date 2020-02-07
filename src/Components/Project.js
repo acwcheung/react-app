@@ -14,8 +14,8 @@ class Project extends React.Component {
     let projectItems = projects.map(project => {
       if(project.title.toLowerCase().indexOf(filterText) === -1) {
         return };
-      if(isCompleted && !project.completed) { return };
-           
+      if(isCompleted && project.completed === 'no') { return };
+      
       return (
         <ProjectItem key={project.id} project={project} onDelete={this.deleteProject.bind(this)} />
       )
