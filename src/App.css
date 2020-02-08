@@ -1,3 +1,49 @@
 body {
-	background: #00FFFF;
+  margin: 0;
+  padding: 0;	
+  background-image: url('./stone.jpg');
+  background-color: #00FFFF;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Verdana;
+
+}
+
+.container-main {
+	width: 60%;
+	background-color: white;
+	opacity: 0.8;
+	margin: auto;
+	text-align: center;
+	position: relative;
+    margin-top: 3%;
+    padding: 10px;
+    box-shadow: 10px 10px 10px black;
+    border-radius: 10px;
+}
+
+.container-searchBar,
+.projects,
+.addproject {
+	box-sizing: border-box;
+	width: 60%;
+	border: 1px solid black;
+	padding: 10px;
+	margin: 20px auto;
+	text-align: left;
+	padding-left: 30px;
+	border-radius: 10px;	
+	box-shadow: 5px 5px 5px grey;
+}
+
+.container-searchBar input[type=text] {
+	width: 80%;
+	height: 20px;
+	font-size: 15px;
+}
+
+.projects {
+	
 }

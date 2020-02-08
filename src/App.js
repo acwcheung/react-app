@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       projects: [],
-      fliterText: '',
+      filterText: "",
       isCompleted: false
     }
     this.handleAddProject = this.handleAddProject.bind(this);
@@ -41,7 +41,7 @@ componentDidMount() {
     }
     ]
   })
-}
+}  
 
 deleteProject(id) {
   const projects = this.state.projects;
@@ -65,16 +65,14 @@ handleCompleted(isCompleted) {
 }
 
 render() {
-  console.log(this.state.filterText);
   return (
     <div className="container-main">
-      <h3>KOOL Web & App Development</h3>
+      <h1>KOOL Web & App Development</h1>
       <SearchBar 
         filterText={this.state.filterText}
         onFilterText={this.handleFilterText}
         onCompleted={this.handleCompleted}   
       />
-      <h3>Our projects</h3>
       <Project 
         projects={this.state.projects} 
         onDelete={this.deleteProject} 

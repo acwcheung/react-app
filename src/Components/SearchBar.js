@@ -26,11 +26,13 @@ handleChecked(e) {
           onChange={this.handleChange}
           placeholder='search...'  
         /><br />
-        <input 
-          type='checkbox' 
-          onClick={this.handleChecked}  
-        />
-        <span>show completed projects only</span>
+        <div>
+          <input 
+            type='checkbox' 
+            onClick={this.handleChecked}  
+          />
+          <span>show completed projects only</span>
+        </div>
       </div>
     );  
   }

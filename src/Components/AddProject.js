@@ -40,7 +40,7 @@ class AddProject extends React.Component {
     });
     
     return (  
-      <div>
+      <div class='addproject'>
         <h3>Add Projects</h3>
         <form onSubmit={this.handleSubmit} >
           <div>

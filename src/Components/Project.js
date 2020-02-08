@@ -9,23 +9,22 @@ class Project extends React.Component {
   render() {
     let projects = this.props.projects
     let filterText = this.props.filterText;
-    let isCompleted = this.props.isCompleted;
-    
+    let isCompleted = this.props.isCompleted;    
     let projectItems = projects.map(project => {
       if(project.title.toLowerCase().indexOf(filterText) === -1) {
-        return };
-      if(isCompleted && project.completed === 'no') { return };
-      
+        return null };
+      if(isCompleted && project.completed === 'no') { return null };     
       return (
         <ProjectItem key={project.id} project={project} onDelete={this.deleteProject.bind(this)} />
       )
     });
-    
-
-    return (  
-      <ul className="Project">
-        {projectItems}      
-      </ul>
+    return (
+      <div className="projects"> 
+        <h3>Our projects</h3>  
+        <ul>
+          {projectItems}      
+        </ul>
+      </div>
     );
   }  	
 }
