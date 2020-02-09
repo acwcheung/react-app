@@ -46,6 +46,8 @@ h3 {
 .container-searchBar input[type=text] {
 	width: 80%;
 	height: 20px;
+	border: 1px solid #666666;
+	border-radius: 3px;
 }
 
 form input,
@@ -54,6 +56,10 @@ form select {
 	height: 20px;
 	margin: 5px;
 } 
+form input[type=text] {
+	border: 1px solid #666666;
+	border-radius: 3px;
+}
 label.addproject-label {
 	display: inline-block;
     width: 20%;
