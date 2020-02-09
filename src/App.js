@@ -80,7 +80,6 @@ render() {
         isCompleted={this.state.isCompleted} 
       />
       <AddProject addProject={this.handleAddProject} />
-      <p>Project in red is in progress</p>      
     </div>
   );  
 }

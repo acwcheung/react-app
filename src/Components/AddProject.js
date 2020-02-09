@@ -44,7 +44,7 @@ class AddProject extends React.Component {
         <h3>Add Projects</h3>
         <form onSubmit={this.handleSubmit} >
           <div>
-            <label>Title: </label>
+            <label class='addproject-label'>Title: </label>
             <input 
               name='title' 
               type='text' 
@@ -53,7 +53,7 @@ class AddProject extends React.Component {
               required />
           </div>
           <div>
-            <label>Category: </label>
+            <label class='addproject-label'>Category: </label>
             <select 
               name='category'
               value={this.state.category}
@@ -62,7 +62,7 @@ class AddProject extends React.Component {
             </select>
           </div>
           <div>
-            <label>Status: </label>
+            <label class='addproject-label'>Status: </label>
             <select 
               name='completed'
               value={this.state.completed}
@@ -71,7 +71,7 @@ class AddProject extends React.Component {
               <option value='yes'>Completed</option>
             </select>
           </div>
-          <input type='submit' value='submit' />
+          <input type='submit' value='Submit' />
         </form>
       </div>
     );  

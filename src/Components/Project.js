@@ -21,9 +21,10 @@ class Project extends React.Component {
     return (
       <div className="projects"> 
         <h3>Our projects</h3>  
-        <ul>
+        <ol>
           {projectItems}      
-        </ul>
+        </ol>
+        <p>Project in blue is in progress</p>      
       </div>
     );
   }  	
