@@ -5,17 +5,15 @@ class SearchBar extends React.Component {
     super(props);
   
   this.handleChange = this.handleChange.bind(this);
-  this.handleChecked = this.handleChecked.bind(this);
+  
   };
 
 handleChange(e) {
-  this.props.onFilterText(e.target.value)
+  const { value, type, checked } = e.target;
+  type === 'checkbox' ? 
+    this.props.onCompleted(checked): 
+    this.props.onFilterText(value);  
 }
-
-handleChecked(e) {
-  this.props.onCompleted(e.target.checked)
-}
-
 
   render() {
     return (
@@ -28,8 +26,10 @@ handleChecked(e) {
         /><br />
         <div>
           <input 
-            type='checkbox' 
-            onClick={this.handleChecked}  
+            type='checkbox'
+            name='isCompleted'
+            checked={this.props.isCompleted} 
+            onChange={this.handleChange}  
           />
           <span>show completed projects only</span>
         </div>

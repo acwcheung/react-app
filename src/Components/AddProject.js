@@ -40,11 +40,11 @@ class AddProject extends React.Component {
     });
     
     return (  
-      <div class='addproject'>
+      <div className='addproject'>
         <h3>Add Projects</h3>
         <form onSubmit={this.handleSubmit} >
           <div>
-            <label class='addproject-label'>Title: </label>
+            <label className='addproject-label'>Title: </label>
             <input 
               name='title' 
               type='text' 
@@ -53,7 +53,7 @@ class AddProject extends React.Component {
               required />
           </div>
           <div>
-            <label class='addproject-label'>Category: </label>
+            <label className='addproject-label'>Category: </label>
             <select 
               name='category'
               value={this.state.category}
@@ -62,7 +62,7 @@ class AddProject extends React.Component {
             </select>
           </div>
           <div>
-            <label class='addproject-label'>Status: </label>
+            <label className='addproject-label'>Status: </label>
             <select 
               name='completed'
               value={this.state.completed}

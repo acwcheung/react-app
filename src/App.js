@@ -70,6 +70,7 @@ render() {
       <h1>KOOL Web & App Development</h1>
       <SearchBar 
         filterText={this.state.filterText}
+        isCompleted={this.state.isCompleted}
         onFilterText={this.handleFilterText}
         onCompleted={this.handleCompleted}   
       />
