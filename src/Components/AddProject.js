@@ -28,9 +28,8 @@ class AddProject extends React.Component {
   }
 
   handleSubmit(e) {
-    const newProject = this.state;
-    console.log(newProject);
     e.preventDefault();
+    const newProject = this.state;
     this.props.addProject(newProject);
   }
 

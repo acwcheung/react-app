@@ -15,8 +15,8 @@ class App extends React.Component {
     }
     this.handleAddProject = this.handleAddProject.bind(this);
     this.deleteProject = this.deleteProject.bind(this);
-    this.handleFilterText = this.handleFilterText.bind(this);
-    this.handleCompleted = this.handleCompleted.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    
   };
 
 componentDidMount() {
@@ -43,7 +43,8 @@ componentDidMount() {
   })
 }  
 
-deleteProject(id) {
+deleteProject(e) {
+  const id = e.target.id;
   const projects = this.state.projects;
   const index = projects.findIndex(project => project.id === id);
   projects.splice(index, 1);
@@ -56,12 +57,11 @@ handleAddProject(project) {
   this.setState({projects: projects});  
 }
 
-handleFilterText(filterText) {
-  this.setState({filterText: filterText})
-}
-
-handleCompleted(isCompleted) {
-  this.setState({isCompleted: isCompleted})
+handleSearch(e) {
+  const { value, type, checked } = e.target;
+  type === 'checkbox' ?
+    this.setState({isCompleted: checked}): 
+    this.setState({filterText: value})  
 }
 
 render() {
@@ -71,8 +71,7 @@ render() {
       <SearchBar 
         filterText={this.state.filterText}
         isCompleted={this.state.isCompleted}
-        onFilterText={this.handleFilterText}
-        onCompleted={this.handleCompleted}   
+        onSearch={this.handleSearch}        
       />
       <Project 
         projects={this.state.projects} 
